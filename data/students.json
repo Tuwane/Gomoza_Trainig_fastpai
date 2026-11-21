@@ -2,16 +2,43 @@
     {
         "id": 1,
         "name": "Mohapi",
-        "age": 25
+        "age": 25,
+        "is_registered": true
     },
     {
+        "id": 2,
         "name": "Teboho",
         "age": 23,
-        "id": 2
+        "is_registered": true
     },
     {
-        "name": "Kabelo",
+        "id": 3,
         "age": 27,
-        "id": 3
+        "name": "Kabelo",
+        "is_registered": true
+    },
+    {
+        "id": 4,
+        "name": "Ntswaki",
+        "age": 40,
+        "is_registered": false
+    },
+    {
+        "id": 5,
+        "name": "Thabang",
+        "age": 16,
+        "is_registered": true
+    },
+    {
+        "id": 6,
+        "name": "Kutlwano",
+        "age": 19,
+        "is_registered": true
+    },
+    {
+        "id": 7,
+        "name": "Pinki",
+        "age": 33,
+        "is_registered": true
     }
 ]

@@ -3,7 +3,8 @@ from routers import (
     authours, books_get,
     books_post,
     students_gets,
-    student_post
+    student_post, 
+    book_put
     
 )
 
@@ -25,6 +26,12 @@ app.include_router(
     books_post.router,
     prefix="/books",
     tags=["Books Add Books"]
+)
+
+app.include_router(
+    book_put.router,
+    prefix="/books",
+    tags=["Books Update Books"]
 )
 
 

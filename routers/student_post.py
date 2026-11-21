@@ -23,11 +23,15 @@ async def add_student(new_student_add : StudentModel):
         
     new_student = new_student_add.model_dump()
     
-    new_student["id"] = max(
+    next_id = max(
         (student["id"] for student in data_load_student),
         default=0
     ) + 1
     
+    new_student = {"id": next_id, **new_student_add.model_dump(exclude={"id"})}
+    new_student.setdefault("is_registered",False)
+    
+    print(new_student.setdefault("is_registered",False))
     data_load_student.append(new_student)
     try:
         save_students(data_load_student)

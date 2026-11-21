@@ -1,12 +1,24 @@
 [
     {
+        "id": 1,
         "title": "C",
+        "author": "Tuwane",
         "category": "Programming",
-        "id": 1
+        "is_available": false
     },
     {
+        "id": 2,
         "title": "C++",
+        "author": "Mohapi",
         "category": "Programming",
-        "id": 2
+        "is_available": false
+    },
+    {
+        "id": 3,
+        "title": "C#",
+        "author": "Mohapi and Coddy",
+        "category": "Programming",
+        "is_available": true,
+        "is_registered": false
     }
 ]

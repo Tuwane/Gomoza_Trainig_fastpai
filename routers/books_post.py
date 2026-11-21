@@ -6,7 +6,7 @@ from storage.storage_books import load_books,save_books
 router = APIRouter()
 
 @router.post("/",status_code=status.HTTP_201_CREATED)
-async def add_books(add_book: BooksModel):
+async def add_books(new_book_add: BooksModel):
     try:
         data_load_books = load_books()
     except FileNotFoundError:
@@ -14,13 +14,15 @@ async def add_books(add_book: BooksModel):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="book files not found"
         )
-    new_book = add_book.model_dump()
+    new_book = new_book_add.model_dump()
     
-    new_book["id"] = max(
+    next_id = max(
         (book["id"] for book in data_load_books),
         default=0
     ) +1
     
+    new_book ={"id": next_id, **new_book_add.model_dump(exclude={"id"})}
+    new_book.setdefault("is_available")
     data_load_books.append(new_book)
     try:
         save_books(data_load_books)
